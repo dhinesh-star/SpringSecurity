@@ -29,8 +29,8 @@ public class ProjectSecurityConfig {
     @Bean
     ClientRegistrationRepository clientRegistrationRepository(){
         ClientRegistration github = githubClientRegistration();
-        // ClientRegistration facebook = facebookClientRegistration();
-        return new InMemoryClientRegistrationRepository(github);
+        ClientRegistration google = googleClientRegistration();
+        return new InMemoryClientRegistrationRepository(github, google);
     }
 
     private ClientRegistration githubClientRegistration(){
@@ -40,10 +40,10 @@ public class ProjectSecurityConfig {
                 .build();
     }
 
-//    private ClientRegistration facebookClientRegistration(){
-//        return CommonOAuth2Provider.FACEBOOK.getBuilder("facebook")
-//                .clientId("")
-//                .clientSecret("")
-//                .build();
-//    }
+    private ClientRegistration googleClientRegistration(){
+        return CommonOAuth2Provider.GOOGLE.getBuilder("google")
+                .clientId("231780420353-invlg8ncigcl7lct61tc14ibgsulr36p.apps.googleusercontent.com")
+                .clientSecret("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")
+                .build();
+    }
 }
