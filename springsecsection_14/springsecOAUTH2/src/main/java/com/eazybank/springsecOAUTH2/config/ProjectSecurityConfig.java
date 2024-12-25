@@ -36,14 +36,14 @@ public class ProjectSecurityConfig {
     private ClientRegistration githubClientRegistration(){
         return CommonOAuth2Provider.GITHUB.getBuilder("github")
                 .clientId("Ov23lipCWk4pBAQMku6B")
-                .clientSecret("259cd8a248ec9db4653b353752f086bd00a12a8a")
+                .clientSecret(<Enter the client secret>)
                 .build();
     }
 
     private ClientRegistration googleClientRegistration(){
         return CommonOAuth2Provider.GOOGLE.getBuilder("google")
                 .clientId("231780420353-invlg8ncigcl7lct61tc14ibgsulr36p.apps.googleusercontent.com")
-                .clientSecret("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")
+                .clientSecret(<Enter the client secret>)
                 .build();
     }
 }
